@@ -1,0 +1,35 @@
+package com.example.radiobuttondemo
+
+import android.graphics.Color
+import android.os.Bundle
+import android.widget.LinearLayout
+import android.widget.RadioButton
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_main)
+
+        val btnChangeRed = findViewById<RadioButton>(R.id.btnBgRed)
+        val btnChangeBlue = findViewById<RadioButton>(R.id.btnBgBlue)
+        val btnChangeGreen = findViewById<RadioButton>(R.id.btnBgGreen)
+        val mainLayout = findViewById<LinearLayout>(R.id.main)
+
+        btnChangeRed.setOnClickListener {
+            mainLayout.setBackgroundColor(Color.RED)
+        }
+
+        btnChangeBlue.setOnClickListener {
+            mainLayout.setBackgroundColor(Color.BLUE)
+        }
+
+        btnChangeGreen.setOnClickListener {
+            mainLayout.setBackgroundColor(Color.GREEN)
+        }
+    }
+}
